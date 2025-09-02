@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { 
   Home, 
@@ -94,17 +95,18 @@ export default function HeroBoard() {
         <div className="px-4 mb-6">
           <div className="grid grid-cols-4 gap-4">
             {services.map((service) => (
-              <button
-                key={service.id}
-                className="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
-              >
-                <div className={`w-12 h-12 rounded-2xl ${service.color} flex items-center justify-center mb-2`}>
-                  <service.icon className="w-6 h-6" />
-                </div>
-                <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                  {service.name}
-                </span>
-              </button>
+                            <Link href="/go-explore" key={service.id}>
+                <button
+                  className="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
+                >
+                  <div className={`w-12 h-12 rounded-2xl ${service.color} flex items-center justify-center mb-2`}>
+                    <service.icon className="w-6 h-6" />
+                  </div>
+                  <span className="text-xs font-medium text-gray-700 text-center leading-tight">
+                    {service.name}
+                  </span>
+                </button>
+              </Link>
             ))}
           </div>
         </div>
