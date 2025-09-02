@@ -66,15 +66,7 @@ export default function HeroBoard() {
       {/* Main Container - Mobile First */}
       <div className="max-w-sm mx-auto bg-white min-h-screen relative pb-24">
         
-        {/* Status Bar */}
-        <div className="flex justify-between items-center px-4 py-2 text-sm bg-white">
-          <span className="font-medium">09:30 PM</span>
-          <div className="flex items-center space-x-1">
-            <div className="w-4 h-2 bg-gray-300 rounded-sm"></div>
-            <div className="w-4 h-2 bg-gray-300 rounded-sm"></div>
-            <div className="w-6 h-3 bg-green-500 rounded-sm"></div>
-          </div>
-        </div>
+        
 
         {/* Weather Hero Card */}
         <div className="mx-4 mt-4 mb-6">
@@ -184,10 +176,7 @@ export default function HeroBoard() {
                 </button>
               ))}
             </div>
-            {/* Home Indicator */}
-            <div className="flex justify-center pb-2">
-              <div className="w-32 h-1 bg-gray-800 rounded-full"></div>
-            </div>
+            
           </div>
         </div>
       </div>
