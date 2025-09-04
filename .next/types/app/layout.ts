@@ -1,4 +1,4 @@
-// File: /home/popo/Documents/project/project-pacitango-fe/app/layout.tsx
+// File: D:\Application\Project Freelance\project-pacitango-fe\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

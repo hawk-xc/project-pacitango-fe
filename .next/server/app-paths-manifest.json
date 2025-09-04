@@ -1,3 +1,7 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/goservice/page": "app/goservice/page.js",
+  "/aduanPariwisata/page": "app/aduanPariwisata/page.js",
+  "/goservice/new/page": "app/goservice/new/page.js",
+  "/aduanPariwisata/tambah/page": "app/aduanPariwisata/tambah/page.js"
 }
