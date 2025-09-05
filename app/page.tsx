@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { Home, Search, Heart, User, MapPin, MessageCircle, Briefcase, Zap, Calendar, Coffee, Camera, Plus, Wind, Sun } from 'lucide-react';
 
@@ -147,10 +148,7 @@ export default function HeroBoard() {
                 </button>
               ))}
             </div>
-            {/* Home Indicator */}
-            <div className="flex justify-center pb-2">
-              <div className="w-32 h-1 bg-gray-800 rounded-full"></div>
-            </div>
+            
           </div>
         </div>
       </div>
