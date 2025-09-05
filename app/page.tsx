@@ -2,22 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { 
-  Home, 
-  Search, 
-  Heart, 
-  User, 
-  MapPin, 
-  MessageCircle, 
-  Briefcase, 
-  Zap,
-  Calendar,
-  Coffee,
-  Camera,
-  Plus,
-  Wind,
-  Sun
-} from 'lucide-react';
+import { Home, Search, Heart, User, MapPin, MessageCircle, Briefcase, Zap, Calendar, Coffee, Camera, Plus, Wind, Sun } from 'lucide-react';
 
 export default function HeroBoard() {
   const [activeTab, setActiveTab] = useState('home');
@@ -41,7 +26,7 @@ export default function HeroBoard() {
       image: 'https://images.pexels.com/photos/4050208/pexels-photo-4050208.jpeg?auto=compress&cs=tinysrgb&w=300',
       source: 'ProductivityHub',
       date: 'Jun 12, 2024',
-      tag: 'Produktivitas'
+      tag: 'Produktivitas',
     },
     {
       id: 2,
@@ -50,8 +35,8 @@ export default function HeroBoard() {
       image: 'https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=300',
       source: 'TechDaily',
       date: 'Jun 11, 2024',
-      tag: 'Teknologi'
-    }
+      tag: 'Teknologi',
+    },
   ];
 
   const bottomNavItems = [
@@ -66,8 +51,15 @@ export default function HeroBoard() {
     <div className="min-h-screen bg-gray-50">
       {/* Main Container - Mobile First */}
       <div className="max-w-sm mx-auto bg-white min-h-screen relative pb-24">
-        
-        
+        {/* Status Bar */}
+        <div className="flex justify-between items-center px-4 py-2 text-sm bg-white">
+          <span className="font-medium">09:30 PM</span>
+          <div className="flex items-center space-x-1">
+            <div className="w-4 h-2 bg-gray-300 rounded-sm"></div>
+            <div className="w-4 h-2 bg-gray-300 rounded-sm"></div>
+            <div className="w-6 h-3 bg-green-500 rounded-sm"></div>
+          </div>
+        </div>
 
         {/* Weather Hero Card */}
         <div className="mx-4 mt-4 mb-6">
@@ -95,18 +87,12 @@ export default function HeroBoard() {
         <div className="px-4 mb-6">
           <div className="grid grid-cols-4 gap-4">
             {services.map((service) => (
-                            <Link href="/go-explore" key={service.id}>
-                <button
-                  className="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 active:scale-95"
-                >
-                  <div className={`w-12 h-12 rounded-2xl ${service.color} flex items-center justify-center mb-2`}>
-                    <service.icon className="w-6 h-6" />
-                  </div>
-                  <span className="text-xs font-medium text-gray-700 text-center leading-tight">
-                    {service.name}
-                  </span>
-                </button>
-              </Link>
+              <button key={service.id} className="flex flex-col items-center p-3 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 active:scale-95">
+                <div className={`w-12 h-12 rounded-2xl ${service.color} flex items-center justify-center mb-2`}>
+                  <service.icon className="w-6 h-6" />
+                </div>
+                <span className="text-xs font-medium text-gray-700 text-center leading-tight">{service.name}</span>
+              </button>
             ))}
           </div>
         </div>
@@ -122,24 +108,14 @@ export default function HeroBoard() {
             {newsItems.map((item) => (
               <div key={item.id} className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200">
                 <div className="relative">
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-40 object-cover"
-                  />
+                  <img src={item.image} alt={item.title} className="w-full h-40 object-cover" />
                   <div className="absolute top-3 left-3">
-                    <span className="bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">
-                      {item.tag}
-                    </span>
+                    <span className="bg-blue-500 text-white text-xs px-3 py-1 rounded-full font-medium">{item.tag}</span>
                   </div>
                 </div>
                 <div className="p-4">
-                  <h4 className="font-semibold text-gray-800 mb-1 line-clamp-2">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                    {item.subtitle}
-                  </p>
+                  <h4 className="font-semibold text-gray-800 mb-1 line-clamp-2">{item.title}</h4>
+                  <p className="text-sm text-gray-600 mb-3 line-clamp-2">{item.subtitle}</p>
                   <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>{item.source}</span>
                     <span>{item.date}</span>
@@ -165,16 +141,10 @@ export default function HeroBoard() {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`flex flex-col items-center space-y-1 p-2 rounded-xl transition-all duration-200 ${
-                    activeTab === item.id 
-                      ? 'bg-blue-500 text-white scale-110' 
-                      : 'text-gray-500 hover:text-blue-500 hover:bg-blue-50'
-                  }`}
+                  className={`flex flex-col items-center space-y-1 p-2 rounded-xl transition-all duration-200 ${activeTab === item.id ? 'bg-blue-500 text-white scale-110' : 'text-gray-500 hover:text-blue-500 hover:bg-blue-50'}`}
                 >
                   <item.icon className={`w-5 h-5 ${activeTab === item.id ? 'text-white' : ''}`} />
-                  <span className={`text-xs font-medium ${activeTab === item.id ? 'text-white' : ''}`}>
-                    {item.label}
-                  </span>
+                  <span className={`text-xs font-medium ${activeTab === item.id ? 'text-white' : ''}`}>{item.label}</span>
                 </button>
               ))}
             </div>
