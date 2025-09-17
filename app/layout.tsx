@@ -5,14 +5,14 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Aduan Fasilitas Pariwisata',
-  description: 'Pantau dan kelola masalah fasilitas pariwisata dengan mudah.',
+  title: 'PacitanGo Auth',
+  description: 'Login & Register',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-gray-100`}>{children}</body>
+    <html lang="id">
+      <body className={`${inter.className} bg-white`}>{children}</body>
     </html>
   );
 }
